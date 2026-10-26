@@ -1,0 +1,35 @@
+# Programming Language
+python>=3.9
+
+# Web Framework
+streamlit
+
+# Deep Learning & ML
+torch
+torchvision
+segmentation-models-pytorch
+clip-by-openai
+
+# Image Processing
+pillow
+opencv-python
+albumentations
+albumentations[pytorch]
+
+# Data Handling
+numpy
+pandas
+matplotlib
+
+# Database
+pymongo
+
+# Security
+bcrypt
+python-dotenv
+
+# Email & Utilities
+ssl
+smtplib
+email
+base64

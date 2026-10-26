@@ -1,0 +1,105 @@
+OncoVision – Setup & Execution Guide
+-----------------------------------
+
+This document explains how to install, configure, and run the OncoVision
+AI-based histopathology analysis system.
+
+-----------------------------------
+1. System Prerequisites
+-----------------------------------
+• Operating System: Windows / Linux / macOS
+• Python Version: 3.9 or higher
+• Internet connection (for MongoDB Atlas and email service)
+
+-----------------------------------
+2. Project Files
+-----------------------------------
+Ensure the following files are present in the SOURCE folder:
+• app.py
+• nd.pth (Segmentation model)
+• lizard_model_final.pth (Classification model)
+• style.css (UI styling – optional)
+• 2.png (Application logo – optional)
+• .env (Environment configuration)
+
+-----------------------------------
+3. Create Virtual Environment (Recommended)
+-----------------------------------
+Open terminal / command prompt in the SOURCE folder and run:
+
+python -m venv venv
+
+Activate the virtual environment:
+
+Windows:
+venv\Scripts\activate
+
+Linux / macOS:
+source venv/bin/activate
+
+-----------------------------------
+4. Install Required Libraries
+-----------------------------------
+Install all required dependencies using:
+
+pip install -r requirements.txt
+
+-----------------------------------
+5. Environment Configuration
+-----------------------------------
+Create a file named .env in the SOURCE folder and add the following:
+
+EMAIL_ENABLED=false
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_email_password
+SMTP_SENDER=your_email@gmail.com
+
+Note:
+• Email is optional and can be disabled by setting EMAIL_ENABLED=false
+• MongoDB connection is already configured in the application
+
+-----------------------------------
+6. Database Configuration
+-----------------------------------
+The system uses MongoDB Atlas (cloud database).
+No local database installation is required.
+
+Ensure internet connectivity for database access.
+
+-----------------------------------
+7. Running the Application
+-----------------------------------
+Run the application using the following command:
+
+streamlit run app.py
+
+-----------------------------------
+8. Accessing the Application
+-----------------------------------
+After successful execution, open a web browser and go to:
+
+http://localhost:8501
+
+-----------------------------------
+9. Application Usage
+-----------------------------------
+• Sign up using a valid email address
+• Log in to the system
+• Upload a histopathology image
+• Choose Classification or Segmentation
+• View analysis results
+• Submit feedback if required
+
+-----------------------------------
+10. Troubleshooting
+-----------------------------------
+• If models fail to load, verify that .pth files are present
+• If database connection fails, check internet connectivity
+• If email fails, verify SMTP credentials or disable email
+• Restart the application after any configuration change
+
+-----------------------------------
+End of Setup Guide
+-----------------------------------

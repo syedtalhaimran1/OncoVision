@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* ====================================================
+   FORCE HIDE ALL STREAMLIT TOP BARS
+   ==================================================== */
+header[data-testid="stHeader"],
+[data-testid="stDecoration"],
+[data-testid="stToolbar"],
+[data-testid="stStatusWidget"],
+.viewerBadge_link__qHcoK,
+.stApp > header,
+.stApp > div:first-child > header,
+.st-emotion-cache-1v0mbdj,
+.st-emotion-cache-1wbqy5l {
+    display: none !important;
+}
+
+/* Remove all top padding/margin from main container */
+.block-container {
+    padding-top: 0 !important;
+    padding-bottom: 2rem !important;
+    max-width: 1300px;
+    margin-top: 0 !important;
+}
+
+.main > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.stApp > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+footer {
+    display: none;
+}
+
+:root {
+    --card-bg: rgba(18, 25, 45, 0.7);
+    --accent: #4facfe;
+    --accent2: #b465ff;
+    --text-white: #ffffff;
+    --text-muted: #b0c4de;
+    --border-glow: rgba(79, 172, 254, 0.3);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ====================================================
+   MAIN APP BACKGROUND (after login)
+   ==================================================== */
+.stApp {
+    background: linear-gradient(135deg, #0B132B 0%, #1C2541 100%);
+    color: var(--text-white);
+}
+
+/* ====================================================
+   GLASS CARD (common)
+   ==================================================== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 20px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 16px;
+}
+
+/* Auth card (login) specific */
+.auth-card {
+    max-width: 1250px;
+    margin: 60px auto;
+}
+
+/* ====================================================
+   FEATURE BOXES (used on login & elsewhere)
+   ==================================================== */
+.feature-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 12px 18px;
+    margin-top: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.feature-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.feature-box i {
+    width: 28px;
+    margin-right: 10px;
+}
+
+/* ====================================================
+   TABS
+   ==================================================== */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    color: #ccc;
+    background: transparent;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* ====================================================
+   INPUTS
+   ==================================================== */
+.stTextInput input {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 14px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.stTextInput input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 8px var(--border-glow);
+}
+
+/* ====================================================
+   BUTTONS
+   ==================================================== */
+.stButton button {
+    background: linear-gradient(90deg, #4facfe, #b465ff);
+    border: none;
+    border-radius: 40px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.stButton button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+/* ====================================================
+   HIDE PROGRESS BARS & OTHER STRAY ELEMENTS
+   ==================================================== */
+div[data-testid="stProgress"] {
+    display: none;
+}
+
+/* ====================================================
+   SIDEBAR (custom gradient, no transparency)
+   ==================================================== */
+[data-testid="stSidebar"] {
+    background: linear-gradient(135deg, #0a0f2a 0%, #4a0e2e 100%);
+    border-radius: 20px;
+    margin: 8px;
+    padding: 10px !important;
+    height: calc(100vh - 16px);
+    position: sticky;
+    top: 8px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 0 !important;
+}
+
+/* Radio buttons in sidebar */
+div[data-testid="stRadio"] > label {
+    display: none;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] {
+    gap: 6px;
+    margin-top: 0;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] label {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+    cursor: pointer;
+    color: #f0f3fa;
+    font-weight: 500;
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] label:hover {
+    background: rgba(110, 231, 255, 0.2);
+    border-color: #6ee7ff;
+    transform: translateX(4px);
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] label[data-checked="true"] {
+    background: rgba(110, 231, 255, 0.25);
+    border-left: 3px solid #6ee7ff;
+    font-weight: 600;
+    box-shadow: 0 0 8px rgba(110, 231, 255, 0.3);
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] div[role="radio"] {
+    display: none;
+}
+
+/* Status and user boxes in sidebar */
+.status-box, .user-box {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin: 8px 0;
+    backdrop-filter: blur(4px);
+    font-size: 0.75rem;
+}
+
+.status-box strong, .user-box strong {
+    color: #6ee7ff;
+    font-size: 0.8rem;
+}
+
+.status-box span.status-text {
+    color: #a0e7ff;
+    font-size: 0.7rem;
+    margin-left: 4px;
+}
+
+.separator {
+    margin: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sidebar-logo img {
+    width: 55%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================================
+   RESULTS GRID & CARDS
+   ==================================================== */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.result-card.full {
+    grid-column: 1 / -1;
+}
+
+.result-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.result-sub {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.metric-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.metric-value {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.metric-notes {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Segmentation metrics */
+.seg-metrics {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.seg-metric-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 8px 12px;
+    text-align: center;
+    flex: 1;
+}
+
+.seg-chip-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: #6ee7ff;
+}
+
+.seg-chip-lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* ====================================================
+   LOGIN SCREEN ONLY STYLES (injected via auth_screen)
+   ==================================================== */
+.fixed-logo {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fixed-logo img {
+    width: 40px;
+    border-radius: 10px;
+}
+
+.fixed-logo span {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #4facfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Login card inner */
+.login-card-inner {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ====================================================
+   TYPOGRAPHY
+   ==================================================== */
+p, h1, h2, h3, h4, h5, h6, label, .stMarkdown {
+    color: var(--text-white);
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+/* ====================================================
+   RESPONSIVE
+   ==================================================== */
+@media (max-width: 900px) {
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .fixed-logo {
+        top: 15px;
+        left: 15px;
+        padding: 5px 12px;
+    }
+
+    .fixed-logo span {
+        font-size: 18px;
+    }
+
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Force hide header using all possible selectors */
+.stApp > header,
+.stApp > div:first-child > header,
+header[data-testid="stHeader"],
+[data-testid="stHeader"],
+[data-testid="stDecoration"],
+.st-emotion-cache-1v0mbdj,
+.st-emotion-cache-1wbqy5l,
+.css-1v0mbdj,
+.css-1wbqy5l {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove top padding from all containers */
+.block-container,
+.stApp .main,
+.stApp > div:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Also remove any pseudo-elements */
+.stApp::before,
+.stApp::after {
+    display: none !important;
+}
