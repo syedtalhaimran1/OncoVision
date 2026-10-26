@@ -25,17 +25,11 @@ OncoVision is a web application that detects cancer cells in medical images usin
 - Python
 - U-Net (deep learning, image segmentation)
 - OpenCV (image preprocessing)
-- Web interface: **[write your framework here, e.g. Flask, Django or Streamlit]**
+- Web interface: Streamlit
 
 ## Dataset
 
-**[Write the name of the dataset you used and add its link here. Do not upload private patient data.]**
-
-## Screenshots
-
-<!-- Add 2 or 3 screenshots of your app. Put the images in a folder called "screenshots" and use this format: -->
-<!-- ![Upload page](screenshots/upload.png) -->
-<!-- ![Result page](screenshots/result.png) -->
+**Dataset used from the warwick University a real lizard dataset**
 
 ## Installation and usage
 
@@ -55,10 +49,6 @@ or streamlit run app.py
 Then open the address shown in the terminal in your browser.
 
 If you do not have a `requirements.txt` file yet, create one with the libraries your project uses.
-
-## Results
-
-**[Add your model result here only if you have it, for example accuracy or Dice score. If you do not have the model you can mail it to me.]**
 
 ## Author
 
